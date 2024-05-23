@@ -18,11 +18,15 @@ result_analytical = (b**3)/3 - (a**3)/3
 
 result_quad, error = spi.quad(f, a, b)
 
-num_samples = 10000
-result_monte_carlo = monte_carlo_integration(f, a, b, num_samples)
+
 
 print(f"Аналітичний результат: {result_analytical}")
 print(f"Результат SciPy quad: {result_quad} з помилкою {error}")
+num_samples = 100
+result_monte_carlo = monte_carlo_integration(f, a, b, num_samples)
+print(f"Результат Монте-Карло ({num_samples} вибірок): {result_monte_carlo}")
+num_samples = 10000
+result_monte_carlo = monte_carlo_integration(f, a, b, num_samples)
 print(f"Результат Монте-Карло ({num_samples} вибірок): {result_monte_carlo}")
 
 x = np.linspace(-0.5, 2.5, 400)
